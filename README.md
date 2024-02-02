@@ -1,4 +1,4 @@
-https://github.com/veromanich/kittygram_final/actions/workflows/main.yml/badge.svg
+![workflow](https://github.com/veromanich/kittygram_final/actions/workflows/main.yml/badge.svg)
 
 # kittygram_final
 ### Описание:
