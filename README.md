@@ -1,26 +1,72 @@
-#  Как работать с репозиторием финального задания
+https://github.com/veromanich/kittygram_final/actions/workflows/main.yml/badge.svg
 
-## Что нужно сделать
+# kittygram_final
+### Описание:
+Kittygram — социальная сеть для обмена фотографиями любимых питомцев. Это полностью рабочий проект, который состоит из бэкенд-приложения на Django и фронтенд-приложения на React.
+##
+### Стек технологий:
+<details>
+<summary>Подробнее/свернуть</summary>
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+- Python 3.9
+- Django 3.2.3
+- React
+- DRF
+- Djoser
+</details>
 
-## Как проверить работу с помощью автотестов
-
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+##
+### Установка:
+<details>
+<summary>Подробнее/свернуть</summary>
+  
+Клонировать репозиторий и перейти в него в командной строке:
 ```
+git clone https://github.com/veromanich/kittygram_final.git
+```
+```
+cd kittygram_final
+```
+Cоздать и активировать виртуальное окружение:
+```
+python3 -m venv env
+```
+```
+source env/bin/activate
+```
+Установить зависимости из файла requirements.txt:
+```
+python3 -m pip install --upgrade pip
+```
+```
+pip install -r requirements.txt
+```
+Выполнить миграции:
+```
+python3 manage.py migrate
+```
+В корне проекта создать файл .env:
+```
+touch .env
+```
+Добавить в .env следующие переменные:
+```
+POSTGRES_DB=kittygram
+POSTGRES_USER=kittygram_user
+POSTGRES_PASSWORD=kittygram_password
+DB_NAME=kittygram
+DB_HOST=db
+DB_PORT=5432
+SECRET_KEY=
+DEBUG=# True/False
+ALLOWED_HOSTS=127.0.0.1,localhost
+```
+Запустить проект:
+```
+python3 manage.py runserver
+```
+</details>
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
-
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+##
+### Автор:
+[Роман Веренич](https://github.com/veromanich)
