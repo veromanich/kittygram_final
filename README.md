@@ -58,8 +58,9 @@ DB_NAME=kittygram
 DB_HOST=db
 DB_PORT=5432
 SECRET_KEY=
-DEBUG=# True/False
-ALLOWED_HOSTS=127.0.0.1,localhost
+ALLOWED_HOSTS=
+DEBUG= #'True' для включения режима отладки / оставить пустой или удалить для его отключения
+TEST_DB= #если 'True' использовать sqlite / оставить пустой или удалить для использования postgresql
 ```
 Запустить проект:
 ```
