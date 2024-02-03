@@ -11,10 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
-if os.environ['DEBUG'].lower == 'true':
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = True if os.getenv('DEBUG') else False
 
 ALLOWED_HOSTS = os.getenv('SECRET', '127.0.0.1, localhost').split(', ')
 
@@ -62,15 +59,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
 
-if os.getenv('TEST_BD') == 'sqlite':
-    DATABASES = {
+DATABASES = (
+    {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': '/data/db.sqlite3',
         }
     }
-else:
-    DATABASES = {
+    if os.getenv('TEST_DB')
+    else {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.getenv('POSTGRES_DB', 'django'),
@@ -80,6 +77,7 @@ else:
             'PORT': os.getenv('DB_PORT', 5432),
         }
     }
+)
 
 
 # Password validation
