@@ -170,4 +170,10 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: (github.actor) успешно выполнеил деплой kittygram! Последние изменения "(github.event.commits[0].message)". https://github.com/${{ github.repository }}/commit/${{github.sha}}
+        message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
