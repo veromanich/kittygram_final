@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
-DEBUG = True if os.getenv('DEBUG').lower() == 'true' else False
+DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
 ALLOWED_HOSTS = os.getenv('SECRET', '127.0.0.1, localhost').split(', ')
 
@@ -66,7 +66,7 @@ DATABASES = (
             'NAME': '/data/db.sqlite3',
         }
     }
-    if os.getenv('TEST_DB').lower() == 'true'
+    if os.getenv('TEST_DB') == 'True'
     else {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
