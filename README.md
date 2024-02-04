@@ -59,8 +59,8 @@ DB_HOST=db
 DB_PORT=5432
 SECRET_KEY=
 ALLOWED_HOSTS=
-DEBUG= #'True' для включения режима отладки / оставить пустой или удалить для его отключения
-TEST_DB= #если 'True' использовать sqlite / оставить пустой или удалить для использования postgresql
+DEBUG= #True/False
+TEST_DB= #True/False
 ```
 Запустить проект:
 ```
