@@ -66,7 +66,7 @@ DATABASES = (
             'NAME': '/data/db.sqlite3',
         }
     }
-    if os.getenv('TEST_DB') == 'True'
+    if os.getenv('TEST_DB', 'False').lower() == 'true'
     else {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
